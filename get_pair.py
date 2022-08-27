@@ -4,7 +4,8 @@ from dotenv import load_dotenv
 from os.path import join, dirname
 import csv, os
 
-
+EXPECTED_SUM = "EXPECTED_SUM"
+CSV_FILE_NAME = "CSV_FILE_NAME"
 
 class PairNumbers:
 
@@ -24,20 +25,19 @@ class PairNumbers:
         arr_length = len(list_to_check)
         save_pairs = {}
         unordered_map = {}
-        count = 0
         for i in range(arr_length):
             if self.expected_sum - list_to_check[i] in unordered_map:
-                count += unordered_map[self.expected_sum - list_to_check[i]]
+                save_pairs[list_to_check[i]]= self.expected_sum - list_to_check[i]
             if list_to_check[i] in unordered_map:
                 unordered_map[list_to_check[i]] += 1
             else:
                 unordered_map[list_to_check[i]] = 1
-        return unordered_map
+        return save_pairs
 
 
 
 if __name__ == "__main__":
     dotenv_path = join(dirname(__file__), '.env')
     load_dotenv(dotenv_path)
-    get_pairs_numbers = PairNumbers(dotenv_path,os.getenv("EXPECTED_SUM"), os.getenv("CSV_FILE_NAME"))
-    print(f" Casos encontrados: {get_pairs_numbers.get_pairs()}")
+    get_pairs_numbers = PairNumbers(dotenv_path,os.getenv(EXPECTED_SUM), os.getenv(CSV_FILE_NAME))
+    print(f" Pairs of intergers found: {get_pairs_numbers.get_pairs()}")
