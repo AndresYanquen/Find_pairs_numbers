@@ -4,6 +4,8 @@ The task is to write a function that finds pairs of integers from a list that
 sum to a given value. The function will take as input the list of numbers as
 well as the target sum.
 
+This program executes through the terminal a script that requires the desired sum result to find the pairs of integers according to that number, this search is done in the list provided in the .csv file 
+
 To execute this repo you must install pipenv via:
 
  #### pip install pipenv
