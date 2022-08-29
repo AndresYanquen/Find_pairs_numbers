@@ -10,7 +10,8 @@ To execute this repo you must install pipenv via:
 
  #### pip install pipenv
 
-First, clone the repository.
+First, clone the repository and open the Find_pairs_numbers folder.
+
 
 After that, enable the pipenv environment via:
 
