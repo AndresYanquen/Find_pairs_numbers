@@ -16,9 +16,14 @@ After that, enable the pipenv environment via:
 
 Then, install the required modules:
 
-#### pipenv install -r requirements.txt
+#### pip install -r requirements.txt
 
 You should be able to run the program through the command:
 
 #### python get_pair.py
+
+To run the test, you should use the command:
+
+#### python test/unittests.py
+
 
